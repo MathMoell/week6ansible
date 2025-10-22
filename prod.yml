@@ -1,0 +1,13 @@
+---
+- name: Production Environment
+  hosts: prod_servers
+  become: yes
+
+  roles:
+    - role: nginx
+      vars:
+        nginx_workers: 4
+        nginx_hostname: "prod.local"
+        nginx_environment: "production"
+        site_title: "Production Environment"
+        site_color: "#00AA00"
